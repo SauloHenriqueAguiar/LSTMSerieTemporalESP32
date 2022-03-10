@@ -1,6 +1,6 @@
 #include <EloquentTinyML.h>
 // temperatura_model.h contém a matriz que você exportou da etapa anterior com xxd ou tinymlgen
-#include "temperatura_model.h"
+#include "temperatura_modelTF.h"
 
 #define NUMBER_OF_INPUTS 1
 #define NUMBER_OF_OUTPUTS 1
@@ -15,7 +15,7 @@ Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUTS, TENSOR_ARENA_SIZE>
 
 void setup() {
     Serial.begin(115200);
-    ml.begin(temperatura_model);
+    ml.begin(temperatura_modelTF);
 }
 
 void loop() {
